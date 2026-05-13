@@ -1,5 +1,7 @@
 package pl.joannazaras.saucedemo.pages;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -11,6 +13,7 @@ public class CheckoutPage {
         return this;
     }
 
+    @Step("Enter customer first name: {firstName}")
     public CheckoutPage enterFirstName(String firstName) {
         $("#first-name").shouldBe(visible).setValue(firstName);
         return this;
@@ -36,6 +39,7 @@ public class CheckoutPage {
         return this;
     }
 
+    @Step("Finish checkout")
     public CheckoutPage clickFinish() {
         $("#finish").shouldBe(visible).click();
         return this;

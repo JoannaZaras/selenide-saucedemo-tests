@@ -1,5 +1,7 @@
 package pl.joannazaras.saucedemo.pages;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -11,11 +13,13 @@ public class InventoryPage {
         return this;
     }
 
+    @Step("Add backpack to cart")
     public InventoryPage addBackpackToCart() {
         $("[data-test='add-to-cart-sauce-labs-backpack']").shouldBe(visible).click();
         return this;
     }
 
+    @Step("Remove backpack from cart")
     public InventoryPage removeBackpackFromCart() {
         $("#remove-sauce-labs-backpack").shouldBe(visible).click();
         return this;
@@ -31,6 +35,7 @@ public class InventoryPage {
         return this;
     }
 
+    @Step("Open shopping cart")
     public CartPage openCart() {
         $(".shopping_cart_link").shouldBe(visible).click();
         return new CartPage();

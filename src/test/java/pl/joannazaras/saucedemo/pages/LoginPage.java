@@ -1,5 +1,6 @@
 package pl.joannazaras.saucedemo.pages;
 
+import io.qameta.allure.Step;
 import pl.joannazaras.saucedemo.config.ConfigReader;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -21,7 +22,7 @@ public class LoginPage {
         $("[data-test='login-button']").shouldBe(visible).click();
         return new InventoryPage();
     }
-
+    @Step("Login with ivalid password")
     public LoginPage loginWithInvalidPassword(String username, String password) {
         enterUsername(username);
         enterPassword(password);
@@ -34,6 +35,7 @@ public class LoginPage {
         return this;
     }
 
+    @Step("Login as standard user")
     public InventoryPage loginAsStandardUser() {
         enterUsername(ConfigReader.getProperty("standard.username"));
         enterPassword(ConfigReader.getProperty("standard.password"));
