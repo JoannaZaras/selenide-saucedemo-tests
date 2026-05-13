@@ -1,2 +1,41 @@
-# selenide-saucedemo-tests
-Demo of Selenide tests
+# Selenide SauceDemo Tests
+
+Simple UI test automation project for SauceDemo using Java, Selenide, JUnit 5 and Maven.
+
+## Purpose
+
+This project was created as a small portfolio/reference project for comparing UI test automation approaches in:
+
+- Selenium WebDriver
+- Selenide
+- Playwright
+
+The same demo application is used to make the comparison easier.
+
+## Covered scenarios
+
+- successful login
+- unsuccessful login
+- adding product to cart
+- removing product from cart
+- checkout flow
+
+## Tech stack
+
+- Java 17
+- Selenide
+- JUnit 5
+- Maven
+
+## Design notes
+
+The project uses Page Object pattern with a light Fluent Interface style.
+
+Example:
+
+```java
+new LoginPage()
+    .enterUsername("standard_user")
+    .enterPassword("secret_sauce")
+    .clickLoginButton()
+    .shouldBeOpened();
