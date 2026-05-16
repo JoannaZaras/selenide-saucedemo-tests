@@ -16,8 +16,8 @@ public class CartPage {
         return this;
     }
 
-    public CheckoutPage clickCheckout() {
+    public CheckoutInformationPage clickCheckout() {
         $("#checkout").shouldBe(visible).click();
-        return new CheckoutPage();
+        return new CheckoutInformationPage();
     }
 }

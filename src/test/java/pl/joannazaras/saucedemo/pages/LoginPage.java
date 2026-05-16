@@ -18,11 +18,7 @@ public class LoginPage {
         return this;
     }
 
-    public InventoryPage clickLoginButton() {
-        $("[data-test='login-button']").shouldBe(visible).click();
-        return new InventoryPage();
-    }
-    @Step("Login with ivalid password")
+    @Step("Login with invalid password")
     public LoginPage loginWithInvalidPassword(String username, String password) {
         enterUsername(username);
         enterPassword(password);
@@ -40,5 +36,10 @@ public class LoginPage {
         enterUsername(ConfigReader.getProperty("standard.username"));
         enterPassword(ConfigReader.getProperty("standard.password"));
         return clickLoginButton();
+    }
+
+    public InventoryPage clickLoginButton() {
+        $("[data-test='login-button']").shouldBe(visible).click();
+        return new InventoryPage();
     }
 }

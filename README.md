@@ -22,10 +22,18 @@ The same demo application is used to make the comparison easier.
 
 ## Tech stack
 
-- Java 17
+- Java 21
 - Selenide
 - JUnit 5
 - Maven
+
+## Reporting
+
+Run tests:
+
+```bash
+mvn clean test
+
 
 ## Design notes
 
